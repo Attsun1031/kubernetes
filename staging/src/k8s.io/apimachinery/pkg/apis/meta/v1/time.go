@@ -75,6 +75,11 @@ func (t *Time) Before(u *Time) bool {
 	return t.Time.Before(u.Time)
 }
 
+// After reports whether the time instant t is after u.
+func (t *Time) After(u *Time) bool {
+	return t.Time.After(u.Time)
+}
+
 // Equal reports whether the time instant t is equal to u.
 func (t *Time) Equal(u *Time) bool {
 	if t == nil && u == nil {

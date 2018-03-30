@@ -195,3 +195,19 @@ func TestTimeEqual(t *testing.T) {
 		})
 	}
 }
+
+func TestTimeBefore(t *testing.T) {
+	t1 := Date(1998, time.May, 5, 1, 5, 5, 0, time.Local)
+	t2 := Date(1998, time.May, 5, 5, 5, 5, 0, time.Local)
+	if !t1.Before(&t2) {
+		t.Error("Failed Time.Before test.")
+	}
+}
+
+func TestTimeAfter(t *testing.T) {
+	t1 := Date(1998, time.May, 5, 1, 5, 5, 0, time.Local)
+	t2 := Date(1998, time.May, 5, 5, 5, 5, 0, time.Local)
+	if !t2.After(&t1) {
+		t.Error("Failed Time.After test.")
+	}
+}
